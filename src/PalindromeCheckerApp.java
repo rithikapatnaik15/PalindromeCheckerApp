@@ -1,23 +1,32 @@
 git
 public class PalindromeCheckerApp {
+}import java.util.Scanner;
 
+public class PalindromeCheckerUC4 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        // Hardcoded string
-        String word = "madam";
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
 
-        // Reverse the string
-        String reversed = "";
+        char[] arr = input.toCharArray();
 
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed = reversed + word.charAt(i);
+        int start = 0;
+        int end = arr.length - 1;
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (arr[start] != arr[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        // Check palindrome using if-else
-        if (word.equals(reversed)) {
-            System.out.println("The word \"" + word + "\" is a Palindrome.");
-        } else {
-            System.out.println("The word \"" + word + "\" is NOT a Palindrome.");
-        }
+        if (isPalindrome)
+            System.out.println("The string is a Palindrome");
+        else
+            System.out.println("The string is NOT a Palindrome");
     }
 }
