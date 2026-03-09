@@ -1,3 +1,4 @@
+git
 public class PalindromeCheckerApp {
 }import java.util.Scanner;
 import java.util.Stack;
